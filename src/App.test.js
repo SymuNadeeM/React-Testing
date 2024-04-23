@@ -5,15 +5,23 @@ test("hello bd", () => {
   render(<App />);
   const text = screen.getByText(/Hello Bangladesh/i);
   expect(text).toBeInTheDocument();
-  
 });
-test("checkBox onchange",()=>{
+// Click event test case with button:::
+test("Click event test case with button", () => {
   render(<App />);
-   let input = screen.getByRole("textbox");
-   fireEvent.change(input,{target:{value:"ab"}})
-   expect(input.value).toBe("abtest")
+  const btn = screen.getByRole("button");
+  fireEvent.click(btn);
+  expect(screen.getByText("Hello Bangladesh")).toBeInTheDocument();
+});
 
-})
+// onchange testing ::
+// test("checkBox onchange",()=>{
+//   render(<App />);
+//    let input = screen.getByRole("textbox");
+//    fireEvent.change(input,{target:{value:"ab"}})
+//    expect(input.value).toBe("abtest")
+
+// })
 
 // test("for text-box", () => {
 //   render(<App />);
@@ -25,8 +33,7 @@ test("checkBox onchange",()=>{
 //   expect(inputBox).toHaveAttribute("id", "userId");
 //   expect(inputBox).toHaveAttribute("type", "text");
 //   expect(inputBox).toHaveAttribute("value", "kamal");
- 
-  
+
 // });
 
 // group test-----------------------------------
