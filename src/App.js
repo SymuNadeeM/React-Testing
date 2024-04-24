@@ -1,19 +1,29 @@
-import { useState } from "react";
+// import { useState } from "react";
 import "./App.css";
-import HelpHandle from "./Helper";
-import Users from "./Users";
+// import HelpHandle from "./Helper";
+// import Users from "./Users";
 
 function App() {
-  const [data, setData] = useState("")
+  // const [data, setData] = useState("")
   return (
     <div className="App">
       <p>Hello Bangladesh</p>
-      <p>Test on Change </p>
+      {/* <p>Test on Change </p> */}
       {/* <input type="text" value={data} onChange={(e)=>{setData(e.target.value + "test")}} /> */}
-      <button onClick={()=>setData("Hello Bangladesh")} >Click here</button>
+      {/* <button onClick={()=>setData("Hello Bangladesh")} >Click here</button>
       <h3>{data}</h3>
        <button onClick={HelpHandle} >print click</button>
-      <Users />
+      <Users /> */}
+       GET By Role
+      <div>
+           <button>Click One</button>
+           <button>Click two</button>
+           <label htmlFor="input1">User Name</label>
+           <input type="text" name="input1" />
+            <div role="dummy">
+              Dummy Text
+            </div>
+      </div>
     </div>
   );
 }

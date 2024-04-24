@@ -1,7 +1,6 @@
 import { render, screen } from "@testing-library/react";
 // import renderer from 'react-test-renderer';
 import App from "./App";
-import HelpHandle from "./Helper";
 // import Users from "./Users";
 
 test("hello bd", () => {
@@ -10,10 +9,25 @@ test("hello bd", () => {
   expect(text).toBeInTheDocument();
 });
 
-test("method testing case 2", ()=>{
-  expect(HelpHandle()).toMatch("hi")
+test("getByRole testing", ()=>{
+  render (<App/>)
+  const btn1 = screen.getByRole("button",{name:"Click One"})
+  const btn2 = screen.getByRole("button",{name:"Click Two"})
+  const input1 = screen.getByRole("textbox",{name: "User Name"})
+  const div1 = screen.getByRole("dummy")
+
+
+  expect(btn1).toBeInTheDocument()
+  expect(btn2).toBeInTheDocument()
+  expect(input1).toBeInTheDocument()
+  expect(div1).toBeInTheDocument()
 })
 
+
+
+// test("method testing case 2", ()=>{
+//   expect(HelpHandle()).toMatch("hi")
+// })
 
 
 // test("class component method testing",()=>{
