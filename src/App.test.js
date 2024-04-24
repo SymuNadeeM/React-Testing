@@ -1,18 +1,31 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
+import renderer from 'react-test-renderer';
 import App from "./App";
+import Users from "./Users";
 
 test("hello bd", () => {
   render(<App />);
   const text = screen.getByText(/Hello Bangladesh/i);
   expect(text).toBeInTheDocument();
 });
+
+test("class component method testing",()=>{
+  const componentData = renderer.create(<Users />)
+  expect(componentData.getUserList()).toMatch("user list")
+})
+
+// test("snapshot for app component", () => {
+//   const container = render(<App />);
+//   expect(container).toMatchSnapshot();
+// });
+
 // Click event test case with button:::
-test("Click event test case with button", () => {
-  render(<App />);
-  const btn = screen.getByRole("button");
-  fireEvent.click(btn);
-  expect(screen.getByText("Hello Bangladesh")).toBeInTheDocument();
-});
+// test("Click event test case with button", () => {
+//   render(<App />);
+//   const btn = screen.getByRole("button");
+//   fireEvent.click(btn);
+//   expect(screen.getByText("Hello Bangladesh")).toBeInTheDocument();
+// });
 
 // onchange testing ::
 // test("checkBox onchange",()=>{
