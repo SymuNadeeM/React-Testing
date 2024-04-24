@@ -3,19 +3,37 @@ import { render, screen } from "@testing-library/react";
 import App from "./App";
 // import Users from "./Users";
 
-// test("hello bd", () => {
+test("hello bd", () => {
+  render(<App />);
+  const text = screen.getByText(/Hello Bangladesh/i);
+  expect(text).toBeInTheDocument();
+});
+
+test("getByPlaceholderText",()=>{
+  render(<App />);
+  const inputPlace= screen.getByPlaceholderText("Enter Your Dec")
+  expect(inputPlace).toBeInTheDocument();
+  expect(inputPlace).toHaveValue("Md.symun");
+})
+
+// getAllByLabelText
+// test("getAllByLabelText",()=>{
 //   render(<App />);
-//   const text = screen.getByText(/Hello Bangladesh/i);
-//   expect(text).toBeInTheDocument();
-// });
+//   const allInput = screen.getAllByLabelText("UserName")
+//   for(let i=0;i<allInput.length; i++){
+//     expect(allInput[i]).toBeInTheDocument();
+//     expect(allInput[i]).toHaveValue("Kamal");
+//   }
+  
+// })
 
 // getByLabelText
-test("getByLabelText", () => {
-  render(<App />);
-  const input = screen.getByLabelText("UserName");
-  expect(input).toBeInTheDocument();
-  expect(input).toHaveValue("Kamal");
-});
+// test("getByLabelText", () => {
+//   render(<App />);
+//   const input = screen.getByLabelText("UserName");
+//   expect(input).toBeInTheDocument();
+//   expect(input).toHaveValue("Kamal");
+// });
 
 // test("getAllByRole", () => {
 //   render(<App />);

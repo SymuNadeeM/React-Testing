@@ -30,10 +30,28 @@ function App() {
           <button>Click </button>
           <button>Click </button>
       </div> */}
-      <div>
+      {/* <div>
         getByLabelText
         <label htmlFor="user-name">UserName</label>
         <input type="text" id="user-name" defaultValue={"Kamal"} />
+      </div> */}
+      {/* <div>
+        getAllByLabelText
+        <br /><br /><br /><br />
+        <label htmlFor="user-name1">UserName</label>
+        <input type="text" id="user-name1" defaultValue={"Kamal"} />
+        <br />
+        <br />
+        <label htmlFor="user-name2">UserName</label>
+        <input type="text" id="user-name2" defaultValue={"Kamal"} />
+        <br />
+        <br />
+        <label htmlFor="user-name3">UserName</label>
+        <input type="text" id="user-name3" defaultValue={"Kamal"} />
+      </div> */}
+      <div>
+      getByPlaceholderText
+      <input type="text" placeholder="Enter Your Dec" defaultValue={"Md.symun"} />
       </div>
     </div>
   );
