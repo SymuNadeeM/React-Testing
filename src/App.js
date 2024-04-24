@@ -14,8 +14,8 @@ function App() {
       <h3>{data}</h3>
        <button onClick={HelpHandle} >print click</button>
       <Users /> */}
-       GET By Role
-      <div>
+      {/* GET By Role */}
+      {/* <div>
            <button>Click One</button>
            <button>Click two</button>
            <label htmlFor="input1">User Name</label>
@@ -23,6 +23,17 @@ function App() {
             <div role="dummy">
               Dummy Text
             </div>
+      </div> */}
+      {/* get By All
+      <div>
+          <button>Click </button>
+          <button>Click </button>
+          <button>Click </button>
+      </div> */}
+      <div>
+        getByLabelText
+        <label htmlFor="user-name">UserName</label>
+        <input type="text" id="user-name" defaultValue={"Kamal"} />
       </div>
     </div>
   );
