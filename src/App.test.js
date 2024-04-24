@@ -11,9 +11,12 @@ test("hello bd", () => {
 
 test("getByRole testing", ()=>{
   render (<App/>)
+  // multiget
   const btn1 = screen.getByRole("button",{name:"Click One"})
   const btn2 = screen.getByRole("button",{name:"Click Two"})
+  // single get
   const input1 = screen.getByRole("textbox",{name: "User Name"})
+  // custom get
   const div1 = screen.getByRole("dummy")
 
 
