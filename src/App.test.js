@@ -1,7 +1,8 @@
 import { render, screen } from "@testing-library/react";
-import renderer from 'react-test-renderer';
+// import renderer from 'react-test-renderer';
 import App from "./App";
-import Users from "./Users";
+import HelpHandle from "./Helper";
+// import Users from "./Users";
 
 test("hello bd", () => {
   render(<App />);
@@ -9,10 +10,16 @@ test("hello bd", () => {
   expect(text).toBeInTheDocument();
 });
 
-test("class component method testing",()=>{
-  const componentData = renderer.create(<Users />)
-  expect(componentData.getUserList()).toMatch("user list")
+test("method testing case 2", ()=>{
+  expect(HelpHandle()).toMatch("hi")
 })
+
+
+
+// test("class component method testing",()=>{
+//   const componentData = renderer.create(<Users />)
+//   expect(componentData.getUserList()).toMatch("user list")
+// })
 
 // test("snapshot for app component", () => {
 //   const container = render(<App />);
