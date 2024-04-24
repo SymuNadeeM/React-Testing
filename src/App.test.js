@@ -9,12 +9,19 @@ test("hello bd", () => {
   expect(text).toBeInTheDocument();
 });
 
-test("getByPlaceholderText",()=>{
+// getByTestId and getAllByTestId
+test("getByTestId and getAllByTestId",()=>{
   render(<App />);
-  const inputPlace= screen.getByPlaceholderText("Enter Your Dec")
-  expect(inputPlace).toBeInTheDocument();
-  expect(inputPlace).toHaveValue("Md.symun");
+  const text = screen.getByTestId("data-test-id")
+  expect(text).toBeInTheDocument();
 })
+
+// test("getByPlaceholderText",()=>{
+//   render(<App />);
+//   const inputPlace= screen.getByPlaceholderText("Enter Your Dec")
+//   expect(inputPlace).toBeInTheDocument();
+//   expect(inputPlace).toHaveValue("Md.symun");
+// })
 
 // getAllByLabelText
 // test("getAllByLabelText",()=>{

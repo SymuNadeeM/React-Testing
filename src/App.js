@@ -49,9 +49,18 @@ function App() {
         <label htmlFor="user-name3">UserName</label>
         <input type="text" id="user-name3" defaultValue={"Kamal"} />
       </div> */}
-      <div>
+      {/* <div>
       getByPlaceholderText
       <input type="text" placeholder="Enter Your Dec" defaultValue={"Md.symun"} />
+      </div> */}
+      <div>
+        getByTestId and getAllByTestId
+        <div data-testid="data-test-id">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus eos
+          modi atque aut debitis assumenda amet quidem, nesciunt totam
+          consectetur blanditiis praesentium, illum voluptas ducimus commodi
+          fugiat ut eius magni?
+        </div>
       </div>
     </div>
   );
