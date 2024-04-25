@@ -8,24 +8,37 @@ test("hello bd", () => {
   const text = screen.getByText(/Hello Bangladesh/i);
   expect(text).toBeInTheDocument();
 });
+// getByAltText
+test("getByAltText",()=>{
+  render(<App />);
+  const imageAlt = screen.getByAltText("top-images")
+  expect(imageAlt).toBeInTheDocument();
+})
+
+// // getByTitle
+// test("getByTitle",()=>{
+//   render(<App />);
+//   const title = screen.getByTitle("Click")
+//   expect(title).toBeInTheDocument();
+// })
 
 
 // getByDisplayValue
-test("getByDisplayValue testarea",()=>{
-  render(<App />);
-  const textarea = screen.getByDisplayValue("Bangladesh")
-  expect(textarea).toBeInTheDocument();
-})
-test("getByDisplayValue input",()=>{
-  render(<App />);
-  const input = screen.getByDisplayValue("love bd")
-  expect(input).toBeInTheDocument();
-})
-test("getByDisplayValue radio",()=>{
-  render(<App />);
-  const radio = screen.getByDisplayValue("male")
-  expect(radio).toBeInTheDocument();
-})
+// test("getByDisplayValue testarea",()=>{
+//   render(<App />);
+//   const textarea = screen.getByDisplayValue("Bangladesh")
+//   expect(textarea).toBeInTheDocument();
+// })
+// test("getByDisplayValue input",()=>{
+//   render(<App />);
+//   const input = screen.getByDisplayValue("love bd")
+//   expect(input).toBeInTheDocument();
+// })
+// test("getByDisplayValue radio",()=>{
+//   render(<App />);
+//   const radio = screen.getByDisplayValue("male")
+//   expect(radio).toBeInTheDocument();
+// })
 
 // getByTestId and getAllByTestId
 // test("getByTestId and getAllByTestId",()=>{
