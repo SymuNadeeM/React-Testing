@@ -9,6 +9,17 @@ test("hello bd", () => {
   expect(text).toBeInTheDocument();
 });
 
+// TextMatch with Function
+test("TextMatch with Function", () => {
+  render(<App />);
+  const divText = screen.getByText((content, element) =>
+    content.startsWith("At")
+  );
+  // const divText = screen.getByText((content, element) =>
+  //   content.endsWith("At")
+  // );
+  expect(divText).toBeInTheDocument();
+});
 
 //  TextMatch with String and Regex
 // test("TextMatch with String",()=>{
@@ -37,7 +48,6 @@ test("hello bd", () => {
 //   const title = screen.getByTitle("Click")
 //   expect(title).toBeInTheDocument();
 // })
-
 
 // getByDisplayValue
 // test("getByDisplayValue testarea",()=>{
@@ -78,7 +88,7 @@ test("hello bd", () => {
 //     expect(allInput[i]).toBeInTheDocument();
 //     expect(allInput[i]).toHaveValue("Kamal");
 //   }
-  
+
 // })
 
 // getByLabelText
