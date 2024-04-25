@@ -12,8 +12,11 @@ test("hello bd", () => {
 // TextMatch with Function
 test("TextMatch with Function", () => {
   render(<App />);
+  // const divText = screen.getByText((content, element) =>
+  //   content.startsWith("At")
+  // );
   const divText = screen.getByText((content, element) =>
-    content.startsWith("At")
+    content.includes("rang")
   );
   // const divText = screen.getByText((content, element) =>
   //   content.endsWith("At")
