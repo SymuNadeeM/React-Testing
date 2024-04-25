@@ -8,12 +8,28 @@ test("hello bd", () => {
   const text = screen.getByText(/Hello Bangladesh/i);
   expect(text).toBeInTheDocument();
 });
+
+
+//  TextMatch with String and Regex
+// test("TextMatch with String",()=>{
+//   render(<App />);
+//   const text = screen.getByText("Hello world",{exact:false})
+//   expect(text).toBeInTheDocument();
+// })
+// test("TextMatch with Regex",()=>{
+//   render(<App />);
+//   // const text = screen.getByText(/milk/)
+//   // const text = screen.getByText(/lk te/)
+//   const text = screen.getByText(/Milk/i)
+//   expect(text).toBeInTheDocument();
+// })
+
 // getByAltText
-test("getByAltText",()=>{
-  render(<App />);
-  const imageAlt = screen.getByAltText("top-images")
-  expect(imageAlt).toBeInTheDocument();
-})
+// test("getByAltText",()=>{
+//   render(<App />);
+//   const imageAlt = screen.getByAltText("top-images")
+//   expect(imageAlt).toBeInTheDocument();
+// })
 
 // // getByTitle
 // test("getByTitle",()=>{

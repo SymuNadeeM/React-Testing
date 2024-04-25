@@ -76,13 +76,19 @@ function App() {
       <br /><br />
       <button title="Click">Click Me</button>
       </div> */}
-      <div>
+      {/* <div>
         title
         <img
           src="https://www.istockphoto.com/photo/earth-globe-with-optical-fiber-cable-gm1606932279-530625658?utm_source=pixabay&utm_medium=affiliate&utm_campaign=SRP_image_sponsored&utm_content=https%3A%2F%2Fpixabay.com%2Fimages%2Fsearch%2Flink%2F&utm_term=link"
           alt="top-images"
         />
-      </div>
+      </div> */}
+      {/* <div>
+        TextMatch with String and Regex
+        <br />
+        <p>Hello woRld</p>
+       <p>milk tea</p>
+      </div> */}
     </div>
   );
 }
