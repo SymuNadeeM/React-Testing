@@ -9,12 +9,30 @@ test("hello bd", () => {
   expect(text).toBeInTheDocument();
 });
 
-// getByTestId and getAllByTestId
-test("getByTestId and getAllByTestId",()=>{
+
+// getByDisplayValue
+test("getByDisplayValue testarea",()=>{
   render(<App />);
-  const text = screen.getByTestId("data-test-id")
-  expect(text).toBeInTheDocument();
+  const textarea = screen.getByDisplayValue("Bangladesh")
+  expect(textarea).toBeInTheDocument();
 })
+test("getByDisplayValue input",()=>{
+  render(<App />);
+  const input = screen.getByDisplayValue("love bd")
+  expect(input).toBeInTheDocument();
+})
+test("getByDisplayValue radio",()=>{
+  render(<App />);
+  const radio = screen.getByDisplayValue("male")
+  expect(radio).toBeInTheDocument();
+})
+
+// getByTestId and getAllByTestId
+// test("getByTestId and getAllByTestId",()=>{
+//   render(<App />);
+//   const text = screen.getByTestId("data-test-id")
+//   expect(text).toBeInTheDocument();
+// })
 
 // test("getByPlaceholderText",()=>{
 //   render(<App />);

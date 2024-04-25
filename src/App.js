@@ -53,13 +53,22 @@ function App() {
       getByPlaceholderText
       <input type="text" placeholder="Enter Your Dec" defaultValue={"Md.symun"} />
       </div> */}
-      <div>
+      {/* <div>
         getByTestId and getAllByTestId
         <div data-testid="data-test-id">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus eos
           modi atque aut debitis assumenda amet quidem, nesciunt totam
           consectetur blanditiis praesentium, illum voluptas ducimus commodi
           fugiat ut eius magni?
+        </div>
+      </div> */}
+      <div>
+        getByDisplayValue
+        <div>
+           <textarea name="" id="" cols="30" rows="10" defaultValue={"Bangladesh"}></textarea>
+           <br /> <br /> <br />
+           <input type="text" defaultValue={"love bd"} />
+           <input type="radio" defaultValue={"male"} />
         </div>
       </div>
     </div>
