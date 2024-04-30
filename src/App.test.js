@@ -8,21 +8,30 @@ test("hello bd", () => {
   const text = screen.getByText(/Hello Bangladesh/i);
   expect(text).toBeInTheDocument();
 });
+// :::::::::::::::::: QueryBy  :::::::::::::::::::::::
+// mainly used in hidden data
 
-// TextMatch with Function
-test("TextMatch with Function", () => {
+test("QueryBy",()=>{
   render(<App />);
-  // const divText = screen.getByText((content, element) =>
-  //   content.startsWith("At")
-  // );
-  const divText = screen.getByText((content, element) =>
-    content.includes("rang")
-  );
-  // const divText = screen.getByText((content, element) =>
-  //   content.endsWith("At")
-  // );
-  expect(divText).toBeInTheDocument();
-});
+  const dv = screen.queryByText("LogIn")
+  expect(dv).not.toBeInTheDocument();
+})
+
+// :::::::::::::::::: getBy  :::::::::::::::::::::::
+// TextMatch with Function
+// test("TextMatch with Function", () => {
+//   render(<App />);
+//   // const divText = screen.getByText((content, element) =>
+//   //   content.startsWith("At")
+//   // );
+//   const divText = screen.getByText((content, element) =>
+//     content.includes("rang")
+//   );
+//   // const divText = screen.getByText((content, element) =>
+//   //   content.endsWith("At")
+//   // );
+//   expect(divText).toBeInTheDocument();
+// });
 
 //  TextMatch with String and Regex
 // test("TextMatch with String",()=>{

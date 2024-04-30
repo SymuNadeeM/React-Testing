@@ -5,9 +5,15 @@ import "./App.css";
 
 function App() {
   // const [data, setData] = useState("")
+  let log = true
   return (
     <div className="App">
       <p>Hello Bangladesh</p>
+      <div>
+      QueryBy and QueryAllBy
+      <br />
+      {log ? <button>Logout</button> : <button>LogIn</button> }
+      </div>
       {/* <p>Test on Change </p> */}
       {/* <input type="text" value={data} onChange={(e)=>{setData(e.target.value + "test")}} /> */}
       {/* <button onClick={()=>setData("Hello Bangladesh")} >Click here</button>
@@ -90,11 +96,12 @@ function App() {
        <p>milk tea</p>
       </div> */}
 
-      <div>
+      {/* <div>
         TextMatch with Function
         <br />
         <h3>At the end of the day orange</h3>
-      </div>
+      </div> */}
+      
     </div>
   );
 }
