@@ -1,19 +1,34 @@
 // import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 // import HelpHandle from "./Helper";
 // import Users from "./Users";
 
 function App() {
   // const [data, setData] = useState("")
-  let log = true
+  // let log = true  {QueryBy}
+  const [data, setData] = useState(false)
+  useEffect(()=>{
+    setTimeout(()=>{
+      setData(true)
+    },3000)
+  },[])
   return (
     <div className="App">
       <p>Hello Bangladesh</p>
-      <div>
-      QueryBy and QueryAllBy
+
+       <div>
+       ::::::::: findBy and findAllBy :::::::::
+       {data ? <div>Data is Found</div> : <div>Data is NOT Found</div> }
+       </div>
+
+      {/* <div>
+     :::::::::  QueryBy and QueryAllBy :::::::::::
       <br />
       {log ? <button>Logout</button> : <button>LogIn</button> }
-      </div>
+      </div> */}
+
+
       {/* <p>Test on Change </p> */}
       {/* <input type="text" value={data} onChange={(e)=>{setData(e.target.value + "test")}} /> */}
       {/* <button onClick={()=>setData("Hello Bangladesh")} >Click here</button>

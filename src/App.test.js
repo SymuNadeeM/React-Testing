@@ -8,14 +8,21 @@ test("hello bd", () => {
   const text = screen.getByText(/Hello Bangladesh/i);
   expect(text).toBeInTheDocument();
 });
+// :::::::::::::::::: findBy  :::::::::::::::::::::::
+test("findBy", async()=>{
+  render(<App />);
+  const dv = await screen.findByText("Data is Found",{},{timeout:4000})
+  expect(dv).toBeInTheDocument();
+})
+
 // :::::::::::::::::: QueryBy  :::::::::::::::::::::::
 // mainly used in hidden data
 
-test("QueryBy",()=>{
-  render(<App />);
-  const dv = screen.queryByText("LogIn")
-  expect(dv).not.toBeInTheDocument();
-})
+// test("QueryBy",()=>{
+//   render(<App />);
+//   const dv = screen.queryByText("LogIn")
+//   expect(dv).not.toBeInTheDocument();
+// })
 
 // :::::::::::::::::: getBy  :::::::::::::::::::::::
 // TextMatch with Function
