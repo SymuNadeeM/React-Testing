@@ -1,30 +1,38 @@
 // import { useState } from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 // import HelpHandle from "./Helper";
 // import Users from "./Users";
 
 function App() {
+  const [eventData, setEventData] = useState("");
   // const [data, setData] = useState("")
   // let log = true  {QueryBy}
-  const [data, setData] = useState(false);
-  useEffect(() => {
-    setTimeout(() => {
-      setData(true);
-    }, 3000);
-  }, []);
+  // const [data, setData] = useState(false);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setData(true);
+  //   }, 3000);
+  // }, []);
   return (
     <div className="App">
       <p>Hello Bangladesh</p>
 
       <div>
+        ::::::::::::::::::::::: Click Event with User Event Library
+        :::::::::::::::::::::::
+        <h1>{eventData}</h1>
+        <button onClick={() => setEventData("Bangladesh")}>Click Me</button>
+      </div>
+
+      {/* <div>
         ::::::::::::::::::::::: Querying Within Elements :::::::::::::::::::::::
         <br />
         <div>
           Country in South Asia
           <p>Bangladesh</p>
         </div>
-      </div>
+      </div> */}
 
       {/* <div>
         ::::::::::::::::::::::: Test Elements with JavaScript Query

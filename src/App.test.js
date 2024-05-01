@@ -1,6 +1,7 @@
-import { render, screen, within } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 // import { render, screen } from "@testing-library/react";
 // import renderer from 'react-test-renderer';
+import userEvent from "@testing-library/user-event";
 import App from "./App";
 // import Users from "./Users";
 
@@ -9,16 +10,29 @@ import App from "./App";
 //   const text = screen.getByText(/Hello Bangladesh/i);
 //   expect(text).toBeInTheDocument();
 // });
+
+
+// :::::::::::::::::::::::   Click Event with User Event Library :::::::::::::::::::::::
+// here need @testing-library/user-event update 
+// write: npm install @testing-library/user-event@latest
+test("Click Event with User Event Library", async () => {
+  userEvent.setup();
+  render(<App />);
+  const btn = screen.getByText("Click Me");
+  await userEvent.click(btn);
+  expect(screen.getByText("Bangladesh")).toBeInTheDocument();
+});
+
 // :::::::::::::::::::::::   Querying Within Elements  :::::::::::::::::::::::
 // using parent and child testing in one div
 
-test("Querying Within Elements",()=>{
-  render(<App />);
-  let el = screen.getByText("Country in South Asia")
-  let subEl = within(el).getByText("Bangladesh")
-  expect(el).toBeInTheDocument();
-  expect(subEl).toBeInTheDocument();
-})
+// test("Querying Within Elements",()=>{
+//   render(<App />);
+//   let el = screen.getByText("Country in South Asia")
+//   let subEl = within(el).getByText("Bangladesh")
+//   expect(el).toBeInTheDocument();
+//   expect(subEl).toBeInTheDocument();
+// })
 
 // :::::::::::::::::::::::   Test Elements with JavaScript Query  :::::::::::::::::::::::
 // test("Elements with JavaScript Query", () => {
