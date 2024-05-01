@@ -1,11 +1,14 @@
 // import { useState } from "react";
+// import { useState } from "react";
 import { useState } from "react";
 import "./App.css";
+
 // import HelpHandle from "./Helper";
 // import Users from "./Users";
 
 function App() {
-  const [eventData, setEventData] = useState("");
+  const [changeValue, setChangeValue] = useState()
+  // const [eventData, setEventData] = useState("");
   // const [data, setData] = useState("")
   // let log = true  {QueryBy}
   // const [data, setData] = useState(false);
@@ -19,11 +22,18 @@ function App() {
       <p>Hello Bangladesh</p>
 
       <div>
+        ::::::::::::::::::::::: onChange Event Testing | Keyboard Interactions
+        :::::::::::::::::::::::
+        <p>{changeValue}</p>
+        <input type="text" onChange={(e)=> setChangeValue(e.target.value) }  />
+      </div>
+
+      {/* <div>
         ::::::::::::::::::::::: Click Event with User Event Library
         :::::::::::::::::::::::
         <h1>{eventData}</h1>
         <button onClick={() => setEventData("Bangladesh")}>Click Me</button>
-      </div>
+      </div> */}
 
       {/* <div>
         ::::::::::::::::::::::: Querying Within Elements :::::::::::::::::::::::

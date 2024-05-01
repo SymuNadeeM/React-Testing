@@ -1,9 +1,11 @@
-import { render, screen } from "@testing-library/react";
 // import { render, screen } from "@testing-library/react";
 // import renderer from 'react-test-renderer';
+// import Users from "./Users";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "./App";
-// import Users from "./Users";
+
+
 
 // test("hello bd", () => {
 //   render(<App />);
@@ -11,17 +13,26 @@ import App from "./App";
 //   expect(text).toBeInTheDocument();
 // });
 
+// :::::::::::::::::::::::   onChange Event Testing | Keyboard Interactions:::::::::::::::::::::::
+test("onChange Event Testing | Keyboard Interactions", async ()=>{
+  userEvent.setup()
+  render(<App />);
+  const el =screen.getByRole("textbox")
+  await userEvent.type(el,"appl")
+  expect(screen.getByText("appl")).toBeInTheDocument()
+})
+
 
 // :::::::::::::::::::::::   Click Event with User Event Library :::::::::::::::::::::::
 // here need @testing-library/user-event update 
 // write: npm install @testing-library/user-event@latest
-test("Click Event with User Event Library", async () => {
-  userEvent.setup();
-  render(<App />);
-  const btn = screen.getByText("Click Me");
-  await userEvent.click(btn);
-  expect(screen.getByText("Bangladesh")).toBeInTheDocument();
-});
+// test("Click Event with User Event Library", async () => {
+//   userEvent.setup();
+//   render(<App />);
+//   const btn = screen.getByText("Click Me");
+//   await userEvent.click(btn);
+//   expect(screen.getByText("Bangladesh")).toBeInTheDocument();
+// });
 
 // :::::::::::::::::::::::   Querying Within Elements  :::::::::::::::::::::::
 // using parent and child testing in one div
