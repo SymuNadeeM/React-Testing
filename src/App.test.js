@@ -1,19 +1,30 @@
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
+// import { render, screen } from "@testing-library/react";
 // import renderer from 'react-test-renderer';
 import App from "./App";
 // import Users from "./Users";
 
-test("hello bd", () => {
+// test("hello bd", () => {
+//   render(<App />);
+//   const text = screen.getByText(/Hello Bangladesh/i);
+//   expect(text).toBeInTheDocument();
+// });
+
+// :::::::::::::::::::::::   Test Elements with JavaScript Query  :::::::::::::::::::::::
+test("Elements with JavaScript Query", () => {
   render(<App />);
-  const text = screen.getByText(/Hello Bangladesh/i);
-  expect(text).toBeInTheDocument();
+  const element = document.querySelector("#testId");
+  expect(element).toBeInTheDocument();
+  expect(element).toHaveTextContent("Cloud Solution");
+  expect(element).toHaveAttribute("id");
 });
+
 // :::::::::::::::::: findBy  :::::::::::::::::::::::
-test("findBy", async()=>{
-  render(<App />);
-  const dv = await screen.findByText("Data is Found",{},{timeout:4000})
-  expect(dv).toBeInTheDocument();
-})
+// test("findBy", async()=>{
+//   render(<App />);
+//   const dv = await screen.findByText("Data is Found",{},{timeout:4000})
+//   expect(dv).toBeInTheDocument();
+// })
 
 // :::::::::::::::::: QueryBy  :::::::::::::::::::::::
 // mainly used in hidden data

@@ -17,10 +17,18 @@ function App() {
     <div className="App">
       <p>Hello Bangladesh</p>
 
-       <div>
+      <div>
+      ::::::::::::::::::::::: Test Elements with JavaScript Query  :::::::::::::::::::::::
+      <br />
+      <div id="testId">
+        Cloud Solution
+      </div>
+      </div>
+
+       {/* <div>
        ::::::::: findBy and findAllBy :::::::::
        {data ? <div>Data is Found</div> : <div>Data is NOT Found</div> }
-       </div>
+       </div> */}
 
       {/* <div>
      :::::::::  QueryBy and QueryAllBy :::::::::::
