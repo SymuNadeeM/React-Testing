@@ -7,25 +7,33 @@ import "./App.css";
 function App() {
   // const [data, setData] = useState("")
   // let log = true  {QueryBy}
-  const [data, setData] = useState(false)
-  useEffect(()=>{
-    setTimeout(()=>{
-      setData(true)
-    },3000)
-  },[])
+  const [data, setData] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setData(true);
+    }, 3000);
+  }, []);
   return (
     <div className="App">
       <p>Hello Bangladesh</p>
 
       <div>
-      ::::::::::::::::::::::: Test Elements with JavaScript Query  :::::::::::::::::::::::
-      <br />
-      <div id="testId">
-        Cloud Solution
-      </div>
+        ::::::::::::::::::::::: Querying Within Elements :::::::::::::::::::::::
+        <br />
+        <div>
+          Country in South Asia
+          <p>Bangladesh</p>
+        </div>
       </div>
 
-       {/* <div>
+      {/* <div>
+        ::::::::::::::::::::::: Test Elements with JavaScript Query
+        :::::::::::::::::::::::
+        <br />
+        <div id="testId">Cloud Solution</div>
+      </div> */}
+
+      {/* <div>
        ::::::::: findBy and findAllBy :::::::::
        {data ? <div>Data is Found</div> : <div>Data is NOT Found</div> }
        </div> */}
@@ -35,7 +43,6 @@ function App() {
       <br />
       {log ? <button>Logout</button> : <button>LogIn</button> }
       </div> */}
-
 
       {/* <p>Test on Change </p> */}
       {/* <input type="text" value={data} onChange={(e)=>{setData(e.target.value + "test")}} /> */}
@@ -124,7 +131,6 @@ function App() {
         <br />
         <h3>At the end of the day orange</h3>
       </div> */}
-      
     </div>
   );
 }

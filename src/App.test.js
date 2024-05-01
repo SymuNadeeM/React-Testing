@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 // import { render, screen } from "@testing-library/react";
 // import renderer from 'react-test-renderer';
 import App from "./App";
@@ -9,15 +9,25 @@ import App from "./App";
 //   const text = screen.getByText(/Hello Bangladesh/i);
 //   expect(text).toBeInTheDocument();
 // });
+// :::::::::::::::::::::::   Querying Within Elements  :::::::::::::::::::::::
+// using parent and child testing in one div
+
+test("Querying Within Elements",()=>{
+  render(<App />);
+  let el = screen.getByText("Country in South Asia")
+  let subEl = within(el).getByText("Bangladesh")
+  expect(el).toBeInTheDocument();
+  expect(subEl).toBeInTheDocument();
+})
 
 // :::::::::::::::::::::::   Test Elements with JavaScript Query  :::::::::::::::::::::::
-test("Elements with JavaScript Query", () => {
-  render(<App />);
-  const element = document.querySelector("#testId");
-  expect(element).toBeInTheDocument();
-  expect(element).toHaveTextContent("Cloud Solution");
-  expect(element).toHaveAttribute("id");
-});
+// test("Elements with JavaScript Query", () => {
+//   render(<App />);
+//   const element = document.querySelector("#testId");
+//   expect(element).toBeInTheDocument();
+//   expect(element).toHaveTextContent("Cloud Solution");
+//   expect(element).toHaveAttribute("id");
+// });
 
 // :::::::::::::::::: findBy  :::::::::::::::::::::::
 // test("findBy", async()=>{
