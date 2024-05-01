@@ -1,30 +1,39 @@
 // import { render, screen } from "@testing-library/react";
 // import renderer from 'react-test-renderer';
 // import Users from "./Users";
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "./App";
-
-
 
 // test("hello bd", () => {
 //   render(<App />);
 //   const text = screen.getByText(/Hello Bangladesh/i);
 //   expect(text).toBeInTheDocument();
 // });
-
-// :::::::::::::::::::::::   onChange Event Testing | Keyboard Interactions:::::::::::::::::::::::
-test("onChange Event Testing | Keyboard Interactions", async ()=>{
-  userEvent.setup()
+// ::::::::::::::::::::::: 02 act function :::::::::::::::::::::::
+// state handle korte act function use kora hoy
+test("act function", async () => {
+  userEvent.setup();
   render(<App />);
-  const el =screen.getByRole("textbox")
-  await userEvent.type(el,"appl")
-  expect(screen.getByText("appl")).toBeInTheDocument()
-})
+  const el = screen.getByRole("textbox");
+  await act(async () => {
+    await userEvent.type(el, "appl");
+  });
 
+  expect(screen.getByText("appl")).toBeInTheDocument();
+});
+
+// :::::::::::::::::::::::  01 onChange Event Testing | Keyboard Interactions:::::::::::::::::::::::
+// test("onChange Event Testing | Keyboard Interactions", async ()=>{
+//   userEvent.setup()
+//   render(<App />);
+//   const el =screen.getByRole("textbox")
+//   await userEvent.type(el,"appl")
+//   expect(screen.getByText("appl")).toBeInTheDocument()
+// })
 
 // :::::::::::::::::::::::   Click Event with User Event Library :::::::::::::::::::::::
-// here need @testing-library/user-event update 
+// here need @testing-library/user-event update
 // write: npm install @testing-library/user-event@latest
 // test("Click Event with User Event Library", async () => {
 //   userEvent.setup();
