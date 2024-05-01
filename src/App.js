@@ -2,12 +2,13 @@
 // import { useState } from "react";
 import { useState } from "react";
 import "./App.css";
+import TestComponent from "./TestComponent";
 
 // import HelpHandle from "./Helper";
 // import Users from "./Users";
 
 function App() {
-  const [changeValue, setChangeValue] = useState()
+  const [changeValue, setChangeValue] = useState();
   // const [eventData, setEventData] = useState("");
   // const [data, setData] = useState("")
   // let log = true  {QueryBy}
@@ -21,12 +22,17 @@ function App() {
     <div className="App">
       <p>Hello Bangladesh</p>
 
-      <div>
+      {/* <div>
+        ::::::::::::::::::::::: Test component Props :::::::::::::::::::::::
+        <TestComponent name="Red" />
+      </div> */}
+
+      {/* <div>
         ::::::::::::::::::::::: onChange Event Testing | Keyboard Interactions
         :::::::::::::::::::::::
         <p>{changeValue}</p>
         <input type="text" onChange={(e)=> setChangeValue(e.target.value) }  />
-      </div>
+      </div> */}
 
       {/* <div>
         ::::::::::::::::::::::: Click Event with User Event Library

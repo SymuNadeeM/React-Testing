@@ -1,27 +1,34 @@
 // import { render, screen } from "@testing-library/react";
 // import renderer from 'react-test-renderer';
 // import Users from "./Users";
-import { act, render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import App from "./App";
+import { render, screen } from "@testing-library/react";
+import TestComponent from "./TestComponent";
 
 // test("hello bd", () => {
 //   render(<App />);
 //   const text = screen.getByText(/Hello Bangladesh/i);
 //   expect(text).toBeInTheDocument();
 // });
+// :::::::::::::::::::::::  Test component Props :::::::::::::::::::::::
+test("component Props", () => {
+  const name = "Green";
+  render(<TestComponent name={name} />);
+  const elements = screen.getByText(`The Color Name is ${name}`);
+  expect(elements).toBeInTheDocument();
+});
+
 // ::::::::::::::::::::::: 02 act function :::::::::::::::::::::::
 // state handle korte act function use kora hoy
-test("act function", async () => {
-  userEvent.setup();
-  render(<App />);
-  const el = screen.getByRole("textbox");
-  await act(async () => {
-    await userEvent.type(el, "appl");
-  });
+// test("act function", async () => {
+//   userEvent.setup();
+//   render(<App />);
+//   const el = screen.getByRole("textbox");
+//   await act(async () => {
+//     await userEvent.type(el, "appl");
+//   });
 
-  expect(screen.getByText("appl")).toBeInTheDocument();
-});
+//   expect(screen.getByText("appl")).toBeInTheDocument();
+// });
 
 // :::::::::::::::::::::::  01 onChange Event Testing | Keyboard Interactions:::::::::::::::::::::::
 // test("onChange Event Testing | Keyboard Interactions", async ()=>{
