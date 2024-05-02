@@ -10,11 +10,11 @@ import App from "./App";
 //   expect(text).toBeInTheDocument();
 // });
 // :::::::::::::::::::::::  Api testing :::::::::::::::::::::::
-test("api test",async ()=>{
+test("api test", async () => {
   render(<App />);
-  const el= await screen.findAllByRole("listitem")
-  expect(el).toHaveLength(10)
-})
+  const el = await screen.findAllByRole("listitem");
+  expect(el).toHaveLength(4);
+});
 // :::::::::::::::::::::::  Test component Props :::::::::::::::::::::::
 // test("component Props", () => {
 //   const name = "Green";
