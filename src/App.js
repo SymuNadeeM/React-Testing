@@ -1,14 +1,14 @@
 // import { useState } from "react";
 // import { useState } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
-import TestComponent from "./TestComponent";
 
 // import HelpHandle from "./Helper";
 // import Users from "./Users";
 
 function App() {
-  const [changeValue, setChangeValue] = useState();
+  const [apiData, setApiData] = useState([]);
+  // const [changeValue, setChangeValue] = useState();
   // const [eventData, setEventData] = useState("");
   // const [data, setData] = useState("")
   // let log = true  {QueryBy}
@@ -18,9 +18,30 @@ function App() {
   //     setData(true);
   //   }, 3000);
   // }, []);
+
+  useEffect(() => {
+    getAllData();
+  }, []);
+
+  const getAllData = async () => {
+    let result = await fetch("https://jsonplaceholder.typicode.com/users");
+    result = await result.json();
+    setApiData(result);
+  };
+  console.log(apiData);
+
   return (
     <div className="App">
       <p>Hello Bangladesh</p>
+
+      <div>
+        ::::::::::::::::::::::: Api Call :::::::::::::::::::::::
+        <ul>
+          {apiData.map((item) => (
+            <li key={item.id}>{item.name}</li>
+          ))}
+        </ul>
+      </div>
 
       {/* <div>
         ::::::::::::::::::::::: Test component Props :::::::::::::::::::::::

@@ -2,20 +2,26 @@
 // import renderer from 'react-test-renderer';
 // import Users from "./Users";
 import { render, screen } from "@testing-library/react";
-import TestComponent from "./TestComponent";
+import App from "./App";
 
 // test("hello bd", () => {
 //   render(<App />);
 //   const text = screen.getByText(/Hello Bangladesh/i);
 //   expect(text).toBeInTheDocument();
 // });
+// :::::::::::::::::::::::  Api testing :::::::::::::::::::::::
+test("api test",async ()=>{
+  render(<App />);
+  const el= await screen.findAllByRole("listitem")
+  expect(el).toHaveLength(10)
+})
 // :::::::::::::::::::::::  Test component Props :::::::::::::::::::::::
-test("component Props", () => {
-  const name = "Green";
-  render(<TestComponent name={name} />);
-  const elements = screen.getByText(`The Color Name is ${name}`);
-  expect(elements).toBeInTheDocument();
-});
+// test("component Props", () => {
+//   const name = "Green";
+//   render(<TestComponent name={name} />);
+//   const elements = screen.getByText(`The Color Name is ${name}`);
+//   expect(elements).toBeInTheDocument();
+// });
 
 // ::::::::::::::::::::::: 02 act function :::::::::::::::::::::::
 // state handle korte act function use kora hoy
